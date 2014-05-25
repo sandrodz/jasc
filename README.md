@@ -1,5 +1,4 @@
-Amortization Schedule Calculator (javascript)
+Amortization Schedule Calculator
 ================================
 
-This mortgage/loan calculator - lets you estimate monthly loan repayments. It also determines out how much of repayments will go towards the principal and how much will go towards interest.
-
+This jQuery plugin - lets you estimate monthly loan repayments. It also determines out how much of repayments will go towards the principal and how much will go towards interest. Calculator also features grace period.
