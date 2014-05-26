@@ -32,14 +32,42 @@
 
         var settings = $.extend({/* Defaults */},options);
 
-        var controlsHtml = '<div class="loan"><input type="text" class="form-control" placeholder="Loan Amount" id="amortization-schedule-amount">' +
-                           '<input type="text" class="form-control" placeholder="Interest" id="amortization-schedule-interest">' +
-                           '<input type="text" class="form-control" placeholder="Duration" id="amortization-schedule-duration">' +
-                           '<input type="text" class="form-control" placeholder="Grace Period" id="amortization-schedule-grace">' +
-                           '<input type="text" class="form-control" placeholder="Fee" id="amortization-schedule-fee"></div>' +
-                           '<div class="date"><input type="text" class="form-control" placeholder="Month" id="amortization-schedule-month">' +
-                           '<input type="text" class="form-control" placeholder="Day" id="amortization-schedule-day">' +
-                           '<input type="text" class="form-control" placeholder="Year" id="amortization-schedule-year"></div>' +
+        var controlsHtml = '<div class="loan">' +
+                               '<div class="input-group">' +
+                                    '<span class="input-group-addon">Loan Amount</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 3800" id="amortization-schedule-amount" />' +
+                                    '<span class="input-group-addon input-group-addon-right">USD</span>' +
+                               '</div>' +
+                               '<div class="input-group">' +
+                                    '<span class="input-group-addon">Interest</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 32" id="amortization-schedule-interest" />' +
+                                    '<span class="input-group-addon input-group-addon-right">%</span>' +
+                               '</div>' +
+                               '<div class="input-group">' +
+                                    '<span class="input-group-addon">Duration</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 48" id="amortization-schedule-duration" />' +
+                                    '<span class="input-group-addon input-group-addon-right">Month</span>' +
+                                '</div>' +
+                                '<div class="input-group">' +
+                                    '<span class="input-group-addon">Grace Period</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 0" id="amortization-schedule-grace" />' +
+                                    '<span class="input-group-addon input-group-addon-right">Month</span>' +
+                                '</div>' +
+                           '</div>' +
+                           '<div class="date">' +
+                                 '<div class="input-group">' +
+                                    '<span class="input-group-addon">Start Month</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 12" id="amortization-schedule-month" />' +
+                                 '</div>' +
+                                 '<div class="input-group">' +
+                                    '<span class="input-group-addon">Start Day</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 28" id="amortization-schedule-day" />' +
+                                 '</div>' +
+                                 '<div class="input-group">' +
+                                    '<span class="input-group-addon">Start Year</span>' +
+                                    '<input type="text" class="form-control" placeholder="e.g. 2014" id="amortization-schedule-year" />' +
+                                 '</div>' +
+                           '</div>' +
                            '<button type="button" class="btn btn-success btn-lg" id="amortization-schedule-submit">Calculate</button>';
         $('#'+settings.controlsID).append(controlsHtml);
 
@@ -107,7 +135,8 @@
                                                + roundTo2(loanTable[t].balance) +'</td></tr>' + (t == loanTable.length - 1 ? '</tbody></table>' : ''));
             }
             // Insert into dom
-            me.append(loanTableTd.join(''));
+            $(me).find('table').remove();
+            $(me).append(loanTableTd.join(''));
         }
 
         // Helper functions
