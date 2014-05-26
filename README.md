@@ -1,4 +1,4 @@
 jQuery Amortization Schedule Calculator
 ================================
 
-This jQuery plugin - lets you estimate monthly loan repayments. It also determines how much of repayments will go towards the principal and how much will go towards interest. Calculator also features grace period.
+This jQuery plugin lets you create loan amortization schedule. It calculates base, %, installment and remaining balance per month. Plugin uses bootstrap for layout, but it is not required for correct functioning. <a href="https://jlas.idev.ge">Demo</a>
