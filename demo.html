@@ -11,11 +11,12 @@
 
     <style>
       #schedule-controls {margin-bottom: 45px;}
-      #schedule-controls .loan {margin-bottom: 15px; clear: both; overflow: hidden; height: 100%;}
-      #schedule-controls .date {margin-bottom: 15px; clear: both; overflow: hidden; height: 100%;}
+      #schedule-controls .loan {clear: both; overflow: hidden; height: 100%;}
+      #schedule-controls .date {margin-bottom: 10px; clear: both; overflow: hidden; height: 100%;}
       #schedule-controls .input-group {margin-bottom: 4px;}
       #schedule-controls .input-group-addon {width: 111px; text-align: right;}
       #schedule-controls .input-group-addon-right {width: auto;}
+      #schedule-controls .error {border: 1px solid red;}
     </style>
 
     <!--[if lt IE 9]>
@@ -50,12 +51,13 @@
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="jquery.asc.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script>
       $(function(){
         
-        $("#schedule-container").amortizationSchedule({
-          controlsID : 'schedule-controls'
+        $("#schedule-container").jasc({
+          controlsID : 'schedule-controls',
+          modal : true
         });
       
       });
