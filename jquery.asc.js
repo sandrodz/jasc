@@ -86,7 +86,7 @@
 
         function calculate() {
             var loanAmount    = parseInt($('#amortization-schedule-amount').val()),
-                loanInterest  = parseInt($('#amortization-schedule-interest').val()), // %
+                loanInterest  = parseFloat($('#amortization-schedule-interest').val()), // %
                 loanDuration  = parseInt($('#amortization-schedule-duration').val()), // Month
                 loanGrace     = parseInt($('#amortization-schedule-grace').val()), // Month
                 loanInitMonth = parseInt($('#amortization-schedule-month').val()),
