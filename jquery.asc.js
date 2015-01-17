@@ -165,7 +165,7 @@
             return String(date).substr(4,12);
         }
         function roundTo2(num) {
-            return Math.round(num * 100) / 100;
+            return parseFloat(Math.round(num * 100) / 100).toFixed(2);
         }
         function PMT(rate,nper,pv,fv,type) {
             // PMT excel function taken from https://gist.github.com/pies/4166888
