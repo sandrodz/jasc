@@ -25,3 +25,5 @@ $(function(){
     });
 });
 ```
+
+Android app by @nodoze313 based on jasc: https://play.google.com/store/apps/details?id=com.zemlyaozer.simplamort
